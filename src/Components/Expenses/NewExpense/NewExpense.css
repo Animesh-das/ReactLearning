@@ -1,0 +1,27 @@
+.newExpense__container{
+    width: 35%;
+    min-width: 580px;
+    margin-top: 10px;
+    background-color: lightgray;
+}
+
+.newExpense__container button{
+    background-color: rgb(51, 51, 61);
+    border-radius: 0.5em;
+    height: 30px;
+    width: 80px;
+    color: whitesmoke;
+    box-shadow: none;
+    margin: 5px;
+}
+
+.newExpense_form__controlContainer{
+    display: inline-block;
+    width: 100%;
+    margin: 10px auto;
+}
+
+.newExpense__AddExpense{
+    width: 125px !important;
+    height: 45px !important;
+}

@@ -1,0 +1,29 @@
+.expense-container {
+    width: 95%;
+    overflow: auto;
+    margin: 5px auto !important;
+    background: lightgray;
+}
+
+.expense-item__date{
+    float: left;
+    width: 18%;
+    min-width: 80px;
+    background-color: #383232;
+    border-radius: 0.5em;
+    padding: 3px;
+    color: whitesmoke;
+}
+
+.expense-item-description {
+    float: right;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.expense-item__price{
+    background-color: #383232;
+    width: 80px;
+    color: whitesmoke;
+    float: right;
+}

@@ -1,0 +1,11 @@
+.expenses {
+    width: 35%;
+    min-width: 580px;
+    margin: 10px auto !important;
+    background-color: #383232;
+}
+
+.span__noExpenses{
+  color: whitesmoke;
+  font-weight: 500;
+}
