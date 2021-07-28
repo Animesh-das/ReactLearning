@@ -1,19 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import "./App.css";
 import Expenses from "./Components/Expenses/Expenses";
 import NewExpense from "./Components/Expenses/NewExpense/NewExpense";
 
 function App() {
-  const expenseList = [
-    { id: 1, title: "car insurance", date: new Date(2020, 11, 12), amount: 24 },
-    { id: 2, title: "car service", date: new Date(2019, 3, 6), amount: 29 },
-    { id: 3, title: "car wash", date: new Date(2021, 3, 5), amount: 124 },
-  ];
-  const [expenses, setExpenses] = useState(expenseList);
+  const [expenses, setExpenses] = useState([]);
 
   const onAddExpenseHandler = (expenseData) => {
     setExpenses((prevExpenses) => [expenseData, ...prevExpenses]);
   };
+
+  const LoadExpenses = useCallback(async () => {
+    const response = await fetch("https://localhost:44320/api/Expenses");
+    const expenseData = await response.json();
+    const expenses = expenseData.map((expense) => {
+      return {
+        id: expense.id,
+        title: expense.name,
+        date: new Date(expense.date),
+        amount: expense.amount,
+      };
+    });
+
+    setExpenses(expenses);
+  }, []);
+
+  useEffect(() => {
+    LoadExpenses();
+  }, [LoadExpenses]);
 
   return (
     <div className="App">

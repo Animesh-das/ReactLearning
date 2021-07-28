@@ -13,9 +13,14 @@ const Expenses = (props) => {
     setfilterYear(filterYear);
   };
 
-  const filteredExpenses = expenses.filter(
-    (expense) => filterYear === 0 || expense.date.getFullYear() === filterYear
-  );
+  
+  const filteredExpenses =
+    expenses.length > 0
+      ? expenses.filter(
+          (expense) =>
+            filterYear === 0 || expense.date.getFullYear() === filterYear
+        )
+      : [];
 
   return (
     <Card className="expenses">
